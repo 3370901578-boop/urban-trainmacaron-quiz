@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>马卡龙很想你，所以来问你问题</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('https://imgur.com/a/VCbIcMH'); /* 替换为第一张图的实际路径 */
+      background-size: cover;
+      background-position: center;
+      font-family: "Arial", sans-serif;
+      color: white;
+      text-align: center;
+    }
+    .container {
+      margin-top: 20%;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 30px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: none;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-left: 10px;
+      border-radius: 5px;
+      border: none;
+      background-color: #ff69b4;
+      color: white;
+      cursor: pointer;
+    }
+    #secondImage {
+      display: none;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <label for="answer">小敏最喜欢：</label>
+    <input type="text" id="answer" placeholder="请输入答案">
+    <button onclick="checkAnswer()">提交</button>
+  </div>
+
+  <div id="secondImage">
+    <img src="https://imgur.com/a/JI8ZK3e" alt="马卡龙的回应" style="max-width: 80%; border-radius: 10px;">
+  </div>
+
+  <script>
+    function checkAnswer() {
+      const input = document.getElementById("answer").value.trim();
+      const validAnswers = ["mkb", "马楷博", "马卡龙"];
+      if (validAnswers.includes(input)) {
+        document.querySelector(".container").style.display = "none";
+        document.getElementById("secondImage").style.display = "block";
+      } else {
+        alert("马卡龙说：不是这个哦，再想想！");
+      }
+    }
+  </script>
+</body>
+</html>
